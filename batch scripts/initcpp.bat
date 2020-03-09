@@ -1,3 +1,8 @@
+if exist %1 (
+echo. && echo. && echo ---------------------------------------------------- && echo. && echo That name is occupied, please retry with another. && echo. && echo ----------------------------------------------------
+exit /b
+)
+
 mkdir %1
 cd %1
 
@@ -115,4 +120,4 @@ echo ^}
 
 cd..
 
-echo. && echo. && echo -------------------------------------------------------------------------------- && echo. && echo Initiated directory containing necessary files for C++ program called %1 && echo. && echo --------------------------------------------------------------------------------
+echo. && echo. && echo -------------------------------------------------------------------------------- && echo. && echo Initiated directory containing necessary files for C++ program called %1. && echo. && echo --------------------------------------------------------------------------------
