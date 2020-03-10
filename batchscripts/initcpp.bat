@@ -56,8 +56,8 @@ echo             "command": "C:\\MinGW\\bin\\g++.exe",
 echo             "args": [
 echo                 "-g",
 echo                 "${file}",
-echo                 "-o",
-echo                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
+echo                 ^/^/"-o",
+echo                 ^/^/"${fileDirname}\\${fileBasenameNoExtension}.exe"
 echo             ],
 echo             "options": {
 echo                 "cwd": "C:\\MinGW\\bin"
