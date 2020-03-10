@@ -83,7 +83,7 @@ echo             "args": [],
 echo             "stopAtEntry": false,
 echo             "cwd": "${workspaceFolder}",
 echo             "environment": [],
-echo             "externalConsole": true,
+echo             "externalConsole": false,
 echo             "MIMode": "gdb",
 echo             "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
 echo             "setupCommands": [
