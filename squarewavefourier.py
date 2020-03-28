@@ -26,7 +26,7 @@ ax.axhline(c = "black")
 x = np.linspace(lowerx, upperx, 20*(upperx-lowerx))
 
 # set degree, odd integer
-deg = 11
+deg = 21
 # set height
 h = 10
 
