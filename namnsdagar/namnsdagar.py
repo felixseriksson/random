@@ -11,7 +11,7 @@ for name in namelist[1:-2]:
     temp = name.split("/")
     final.append(temp[0][:1].upper() + temp[0][1:])
 
-dir_path = os.path.dirname(os.path.realpath(__file__))
+dir_path = "C:\\Users\\felix\\Documents\\random"
 logopath = "C:\\Users\\felix\\Pictures\\icons\\trumpet29.svg"
 generatedscript = open(dir_path + "\\" + "burnttoastscript.ps1", "w")
 generatedscript.writelines("New-BurntToastNotification ")
