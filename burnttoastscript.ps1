@@ -1,0 +1,1 @@
+New-BurntToastNotification -Text "Daglig kungörelse", 'Idag har Hakon och Håkan namnsdag.' -AppLogo C:\Users\felix\Pictures\icons\trumpet29.svg
