@@ -4,4 +4,4 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ^End::
-Run C:\Users\felix\Desktop\WindowsTerminal-Shortcut.lnk
+Run C:\Users\felix\Desktop\WindowsTerminalShortcut.lnk
