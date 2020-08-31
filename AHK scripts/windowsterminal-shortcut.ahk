@@ -3,5 +3,5 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-^Home::
-Run C:\Users\felix\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Windows PowerShell\Windows PowerShell
+^End::
+Run C:\Users\felix\Desktop\WindowsTerminal-Shortcut.lnk
