@@ -47,3 +47,10 @@ for s in range(2, 7):
         break
 else:
     print("None found")
+
+# Input
+# 100 25 5 1 3 8
+# 913
+# Erroneously returns "None found"
+# despite the possible solution
+# 100 25 + 5 + 8 1 - * 3 +
