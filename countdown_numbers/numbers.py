@@ -33,14 +33,24 @@ for num in numbers:
 
 for s in range(2, 7):
     for permutation in permutations(numbers, r = s):
-        a, b, *rest = permutation
+        # a, b, *rest = permutation
+        nums = permutation
         operations = product(operators, repeat = s-1)
         for permutation in operations:
-            expression = zip([a+ " " + b, *rest], permutation)
-            rpn = "".join(variable + " " + operator + " " for variable, operator in expression)
-            rpn = rpn[:-1]
-            if eval(rpn) == target:
-                res.add(rpn)
+            tokens = nums[:] + permutation[:]
+            # expression = zip([a+ " " + b, *rest], permutation)
+            # rpn = "".join(variable + " " + operator + " " for variable, operator in expression)
+            # rpn = rpn[:-1]
+            # if eval(rpn) == target:
+            #     res.add(rpn)
+            for ordering in permutations(tokens):
+                string = " ".join(tokens)
+                try:
+                    evalresult = eval(string)
+                except:
+                    continue
+                if evalresult == target:
+                    res.add(rpn)
     if res:
         for r in res:
             print(r)
