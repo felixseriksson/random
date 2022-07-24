@@ -57,10 +57,11 @@ def forestplot(model_estimate,text,save_location='forestplot.png',zero=-2,clip=[
        if len(colour) == 1 :
            colour.append('r')
        
-       for i in range(len(model_estimate)-1):
-              line_range_model_estimate = [model_estimate['value1'][len(model_estimate)-i-1],model_estimate['value2'][len(model_estimate)-i-1]]  
-              label = [i+1,i+1]
-              study = [model_estimate['mean'][len(model_estimate)-i-1],model_estimate['mean'][len(model_estimate)-i-1]]
+       print(len(model_estimate))
+       for i in range(len(model_estimate)):
+              line_range_model_estimate = [model_estimate['value1'][i],model_estimate['value2'][i]]  
+              label = [i,i]
+              study = [model_estimate['mean'][i],model_estimate['mean'][i]]
               plt.plot(line_range_model_estimate,label, color=colour[0])
               plt.scatter(study,label,marker='s', color = colour[0])#,s=model_estimate['weight'][len(model_estimate)-i-2], color=colour[0])
                          
@@ -101,8 +102,8 @@ import os
 
 # Importing data required for plotting
 
-model_estimate = pd.read_csv(os.getcwd() + '/../../Desktop/model_estimate.csv')
-text = pd.read_csv(os.getcwd() + '/../../Desktop/text.csv')
+model_estimate = pd.read_csv(os.getcwd() + '/model_estimate.csv')
+text = pd.read_csv(os.getcwd() + '/text.csv')
 
 # Create Forest plot
 forestplot(model_estimate=model_estimate,text=text,clip=[0.2,7],xlab='x-values',colour=['r','g'],title='Forest plot',grid=True,is_summary=True)
