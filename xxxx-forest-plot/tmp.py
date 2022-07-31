@@ -103,6 +103,7 @@ import os
 # Importing data required for plotting
 
 model_estimate = pd.read_csv(os.getcwd() + '/model_estimate.csv')
+model_estimate.
 text = pd.read_csv(os.getcwd() + '/text.csv')
 
 # Create Forest plot
