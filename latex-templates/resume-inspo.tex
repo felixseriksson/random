@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage{url,parskip,fullpage,supertabular,titlesec,hyperref}
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks, urlcolor=linkcolour, linkcolor=linkcolour}
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+\newcommand{\job}[6]{#1 & #2 at \textbf{#3}, #4\\ & \emph{#5}\\& \small{#6}\\
+	\multicolumn{2}{c}{}\\ }
+\begin{document}
+	\pagestyle{empty}
+	\par{\centering{\huge Maxime Serrano}\bigskip\par}
+	\hrule
+	\par{\centering{Carnegie Mellon University; SMC 4812; Pittsburgh, PA 15289\hfill(408) 431-3132;
+			\href{mailto:mserrano@cmu.edu}{mserrano@cmu.edu}}\par}
+	
+	\section{Education}
+	\begin{tabular}{rl}
+		May 2015 {\em expected} & Bachelor of Science in Computer Science and \\
+		& Bachelor of Science in Mathematical Sciences,  \\
+		& \textbf{Carnegie Mellon University}, Pittsburgh, PA\\
+		& Cumulative GPA: 3.80 \\&\\
+		Relevant Courses: & Machine Learning (10-601, Fall 2014), Compiler Design (15-411, Fall 2012) \\
+		& Algorithm Design and Analysis (15-451, Fall 2013), \\
+		& Mathematical Studies (21-235/236/237/238, Fall 2012/Spring 2013)\end{tabular}
+	
+	\section{Experience}
+	\begin{tabular}{r|p{0.8\textwidth}}
+		\job{Summer 2014}{Software Engineering Intern}{Dropbox Inc}{San Francisco, CA}
+		{Team Cash (Monetization)}{Worked on a rearchitecturing of the Dropbox payments system,
+			allowing it to be a standalone service rather than a submodule of a much larger service. 
+			Designed interface, wrote endpoints, implemented monitoring and reliability infrastructure,
+			and launched to a large percentage of traffic.}
+		\job{Fall 2013 \& 2014}{Teaching Assistant}{Carnegie Mellon University}{Pittsburgh, PA}
+		{15-411 (Compiler Design)}
+		{Improved starter code, designed and graded assignments,
+			and held regular office hours.}
+		\job{Summer 2013}{Software Engineering Intern}{Google Inc}{Mountain View, CA}
+		{AdSpam Clients \& Signals}
+		{Worked on improvements to the Android malware scanner to identify
+			applications intending to perform fraudulent actions, in particular automatic ad clicks, on behalf
+			of the user.}
+		\job{Summer 2012}{Software Engineering Intern}{Google Inc}{Mountain View, CA}
+		{Internationalization Libraries}
+		{Worked on the open-source project ICU (\url{http://www.icu-project.org/}) to provide better
+			word-breaking capabilities in languages similar to Chinese, Japanese, Korean and Thai in C, C++ and
+			Java.}
+		\job{Summer 2011}{Programmer}{Manifold Studios}{Boston, MA}{iPhone Game Development}
+		{Worked in a small team on the next version of start-up's flagship game, WarSquared. Wrote base
+			game engine code, networking layers, designed user interfaces,
+			and revamped server code.}
+	\end{tabular}
+	
+	\section{Projects and Activities}
+	\begin{tabular}{r|p{0.9\textwidth}}
+		PPP & \footnotesize{Co-leader of PPP, a computer security research group and competition team at
+			Carnegie Mellon. In August 2014, the team won the DEFCON CTF contest for the second year 
+			in a row.} \\
+		Wren & \footnotesize{Working on an obfuscating compiler for a C-style language implementing many pseudo-higher-order features.} \\
+		\multicolumn{2}{c}{}\\
+	\end{tabular}
+\end{document}

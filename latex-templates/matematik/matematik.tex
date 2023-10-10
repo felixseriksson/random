@@ -1,0 +1,375 @@
+\documentclass[11pt]{article}
+
+%%%%%%%%%%%%%% Standard packages: %%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, bmargin = 4cm]{geometry}
+\usepackage[english]{babel}
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[hidelinks]{hyperref}
+\usepackage{booktabs}
+\usepackage{color}
+\usepackage{multicol}
+\usepackage[parfill]{parskip}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{bm}
+\usepackage{lipsum}
+% måste fixa denna \usepackage{physics}
+% måste fixa denna \usepackage{siunitx}
+\usepackage{todonotes}
+
+%%%%%%%%%%%%%% Essential togglable packages: %%%%%%%%%%%%%%
+
+% adjust the margins using the geometry package
+% usage \usepackage[left=a, right=b, top=c, bottom=d]{geometry}
+\usepackage[a4paper, bmargin = 4cm]{geometry}
+
+% TODONOTES TODO FIXA
+%\usepackage[textwidth=2.25cm,]{todonotes}
+%\reversemarginpar
+%\setlength{\marginparwidth}{1.75cm}
+
+% Toggle tikz if needed
+%\usepackage{tikz}
+
+% Useful adjustments/fixes for amsmath etc (more symbols etc)
+% ex: showonlyrefs flag only shows eq. numbers for referenced equations
+\usepackage{mathtools}
+%\mathtoolsset{showonlyrefs, showmanualtags}
+
+%%%%%%%%%%%%%% Fonts: %%%%%%%%%%%%%%
+
+% Toggle mathpazo version of Palatino maths-oriented serif font
+% \usepackage{mathpazo}
+
+% Toggle Times New Roman ish
+% Times text with Symbol math
+\usepackage{mathptmx}
+% Times text with Belleek math
+% \usepackage{mathtime}
+
+% Toggle AMS Euler maths handwriting font
+%\usepackage{euler}
+
+% Raph Smith's Formal Script
+% $\mathscr{}$ provides fancier calligraphy than $\mathcal{}$
+%\usepackage{mathrsfs}
+
+%%%%%%%%%%%%%% Headers (and Footers): %%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L,C]{}
+\fancyhead[R]{Felix Steinberger Eriksson\\\url{felixse@kth.se}\\12-34-5678}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\headsep = 3em
+
+%%%%%%%%%%%%%% New Theorem style %%%%%%%%%%%%%%
+% create theorem style
+\newtheoremstyle{break}% name
+{}%         Space above, empty = `usual value'
+{}%         Space below
+{}%         Body font
+{}%         Indent amount (empty = no indent, \parindent = para indent)
+{\bfseries}% Thm head font
+{.}%        Punctuation after thm head
+{\newline}% Space after thm head: \newline = linebreak
+{}%         Thm head spec
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Uncomment to use above theorem style
+%\theoremstyle{break}
+%\newtheorem{hwquestion}{Question}
+
+%%%%%%%%%%%%%% Language dependant names %%%%%%%%%%%%%%
+% Toggle by changig "\iffalse" to "\iftrue" and v.v.
+
+% English
+\iffalse
+\newtheorem{thm}{Theorem}
+\newtheorem{thm*}{Theorem}
+
+\newtheorem{prop}{Proposition}
+\newtheorem{prop*}{Proposition}
+
+\newtheorem{lem}{Lemma}[thm]
+\newtheorem*{lem*}{Lemma}
+
+\newtheorem{cor}{Corollary}[thm]
+
+\newtheorem*{defn}{Definition}
+
+\newtheorem*{note}{Note}
+
+\newtheorem*{rem}{Remark}
+
+\newtheorem*{ex}{Example}
+\fi
+
+% Swedish
+\iftrue
+\newtheorem{thm}{Sats}
+\newtheorem{thm*}{Sats}
+
+\newtheorem{prop}{Proposition}
+\newtheorem{prop*}{Proposition}
+
+\newtheorem{lem}{Lemma}[thm]
+\newtheorem*{lem*}{Lemma}
+
+\newtheorem{cor}{Följdsats}[thm]
+
+%\newtheorem*{defn}{Definition}
+
+\newtheorem*{note}{Kommentar}
+
+\newtheorem*{rem}{Anmärkning}
+
+\newtheorem*{ex}{Exempel}
+
+\addto\extrasenglish{\renewcommand\proofname{Bevis}}
+
+\renewcommand{\figurename}{Figur}
+\renewcommand{\tablename}{Tabell}
+\fi
+
+% German
+\iffalse
+\newtheorem{thm}{Satz}
+\newtheorem{thm*}{Satz}
+
+\newtheorem{prop}{Proposition}
+\newtheorem{prop*}{Proposition}
+
+\newtheorem{lem}{Lemma}[thm]
+\newtheorem*{lem*}{Lemma}
+
+\newtheorem{cor}{Korollar}[thm]
+
+%\newtheorem*{defn}{Definition}
+
+\newtheorem*{note}{Beobachtung}
+
+\newtheorem*{rem}{Anmerkung}
+
+\newtheorem*{ex}{Beispiel}
+
+\addto\extrasenglish{\renewcommand\proofname{Beweis}}
+
+\renewcommand{\figurename}{Figur}
+\renewcommand{\tablename}{Tabelle}
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%% Mathbb shortcuts for sets %%%%%%%%%%%%%%
+\newcommand{\rr}{\mathbb{R}}
+\newcommand{\nn}{\mathbb{N}}
+\newcommand{\qq}{\mathbb{Q}}
+\newcommand{\zz}{\mathbb{Z}}
+\newcommand{\cc}{\mathbb{C}}
+\newcommand{\oo}{\mathbb{O}}
+\newcommand{\ff}{\mathbb{F}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%% Mathbb shortcuts for cal %%%%%%%%%%%%%%
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calG}{\mathcal{G}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calI}{\mathcal{I}}
+\newcommand{\calJ}{\mathcal{J}}
+\newcommand{\calK}{\mathcal{K}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calQ}{\mathcal{Q}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\calW}{\mathcal{W}}
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\calY}{\mathcal{Y}}
+\newcommand{\calZ}{\mathcal{Z}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%% Set notation shortcuts %%%%%%%%%%%%%%
+\newcommand{\llangle}{\left\langle}
+\newcommand{\rrangle}{\right\rangle}
+\DeclarePairedDelimiter\setof{\{}{\}}
+\DeclarePairedDelimiter\cardof{\lvert}{\rvert}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%% Mathematical operators/random %%%%%%%%%%%%%%
+\newcommand{\re}{\operatorname{Re}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\Span}{\operatorname{Span}}
+\newcommand{\var}{\operatorname{Var}}
+\newcommand{\Proj}{\operatorname{Proj}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\aut}{\operatorname{aut}}
+\newcommand{\inn}{\operatorname{inn}}
+\newcommand{\Sign}{\operatorname{Sign}}
+\newcommand{\Div}{\operatorname{div}}
+\newcommand{\Rot}{\operatorname{rot}}
+\newcommand{\Grad}{\operatorname{grad}}
+\newcommand{\Tr}{\operatorname{Trace}}
+\newcommand{\del}[2]{\frac{\partial #1}{\partial #2}}
+\DeclarePairedDelimiterX\innerp[2]{\langle}{\rangle}{#1,#2}
+\DeclarePairedDelimiterX\qinnerp[2]{\langle}{\rangle}{#1\vert#2}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+\newcommand{\vv}[1]{\vec{\mkern0mu\bm{#1}}}
+\newcommand{\grad}[1]{\nabla #1}
+\newcommand{\dv}[1]{\nabla\cdot #1}
+\newcommand{\curl}[1]{\nabla\times #1}
+\newcommand{\lapl}[1]{\nabla^2 #1}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+\newcommand{\overbar}[1]{\mkern 2mu\overline{\mkern-2mu#1\mkern-2mu}\mkern 2mu}
+\newcommand{\gln}[2]{\mathrm{GL}_{#1}({#2})}
+\newcommand{\sln}[2]{\mathrm{SL}_{#1}({#2})}
+\newcommand*\conj[1]{\overline{#1}}
+\newcommand*\otherconj[1]{\overbar{#1}}
+\newcommand{\sumin}{\sum_{i=1}^{n}}
+\newcommand{\qqed}{\newline\begin{raggedright} \qed \end{raggedright}}
+\newcommand{\e}{\mathrm{e}}
+\renewcommand{\emptyset}{\text{\O}}
+\newcommand{\Hair}{\ifmmode\mskip1mu\else\kern0.08em\fi}
+% Emdash
+\DeclareRobustCommand{\thinskip}{\hskip 0.075em\relax}
+%\def\emdaash{---}
+%\def\daash#1#2{\unskip#1\thinskip#2\thinskip\ignorespaces}
+%\def\emdash{\daash\nobreak\emdaash}
+% Emdash done
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%% Statistics %%%%%%%%%%%%%%
+\newcommand\indep{\protect\mathpalette{\protect\independenT}{\perp}}
+%\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+\newcommand{\independenT}[2]{#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}}
+\newcommand{\E}[1]{\mathbb{E}{\bigl[#1\bigr]}}
+\newcommand{\given}{\big|}
+\newcommand{\Var}[1]{\mathrm{Var}{(#1)}}
+\newcommand{\cov}[2]{\mathrm{cov}{(#1, #2)}}
+\newcommand{\pa}[2]{\mathrm{pa}_{#1}({#2})}
+\newcommand{\lik}[2]{\mathcal{L}(#1 \mid #2)}
+\newcommand{\hh}{\mathcal{H}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%% Toggle logo: %%%%%%%%%%%%%%
+% \iftrue to enable, \iffalse to disable
+\iffalse
+\makeatletter         
+%\def\@maketitle{
+%	%\raggedright 
+%	\centering
+%	\includegraphics[width = 40mm]{kthlogo}\\
+%	\begin{center}
+%		{\huge \@title }\\[4ex]
+%		{\Large  \@author}\\
+%		\@date
+%\end{center}}
+%\makeatother
+%\fi
+
+\title{Title in Course}
+\author{Felix Steinberger Eriksson\\
+	\url{felixse@kth.se}}
+\date{KTH, 12 - 34 - 5678\\ %ändra!
+	SF1680, CTMAT, TM-2}
+
+% Set french spacing (one word space only between sentences)
+\frenchspacing
+
+\begin{document}
+	\maketitle
+	
+	\lipsum[1-3]
+	%\begin{hwquestion}
+	%	Body of the question. 2+2=?
+	%\end{hwquestion}
+	\begin{thm}
+		4oksdmcolm
+	\end{thm}
+	\begin{lem}
+		akslmndflamk
+	\end{lem}
+	\begin{cor}
+		akslmndflamk
+	\end{cor}
+	\begin{note}
+		akslmndflamk
+	\end{note}
+	%\begin{defn}
+	%	akslmndflamk
+	%\end{defn}
+	\begin{rem}
+		akslmndflamk
+	\end{rem}
+	\begin{ex}
+		akslmndflamk
+	\end{ex}
+	\begin{proof}
+		\    %%% break theline to make the enumerate align better
+		\begin{enumerate}
+			\item proving the first part.
+			\item proving the second part.
+		\end{enumerate}
+	\end{proof}
+\newpage
+
+\begin{table}[ht]
+	\centering
+	\caption{Thicker horizontal lines above and below the table.}
+	\begin{tabular}[t]{lcc}
+		\toprule
+		&Treatment A&Treatment B\\
+		\midrule
+		John Smith&1&2\\
+		Jane Doe&--&3\\
+		Mary Johnson&4&5\\
+		\bottomrule
+	\end{tabular}
+\end{table}%
+
+line 1 $\rr$ asldfk
+
+line 2 $\setof{a, b,b}$ asdf.
+
+line 3 $\del{f}{x}$. sadfl
+
+line 3 $\innerp{A}{B}$
+
+line 4 $\abs{laskdmf}$ fal 
+
+line 5 $\norm{lasfm}$
+
+line 6 $\vv{v}$ asdfk $\vec{v}$
+
+line 7 $\Proj$ 
+
+line 8 $\grad{\vv{v}}$ ak $\dv{\vv{v}}$ alsdfmkl $\curl{\vv{v}}$ aldsdfmk $\lapl{\vv{v}}$
+
+line 9 $\calD$
+
+line 10 $\emptyset$
+
+%line 11 The letters \emdash A, B and C \emdash were capital. Compare to the following:\\ The letters---A, B and C---were capital.
+
+line 11 $\E{X \given Y}$
+\end{document}
