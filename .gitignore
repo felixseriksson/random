@@ -9,6 +9,10 @@ __pycache__/
 # VS Code
 .vscode/
 
+# Random directories to not include
+# Andreea data science hw
+gbus-4401-5401-problem-set-2/
+
 # Distribution / packaging
 .Python
 build/
